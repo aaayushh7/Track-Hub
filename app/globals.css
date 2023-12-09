@@ -12,6 +12,7 @@
 @layer base {
   body {
     @apply font-inter;
+    background-color: black;
   }
 }
 
@@ -21,11 +22,11 @@
   }
 
   .head-text {
-    @apply mt-4 text-6xl leading-[72px] font-bold tracking-[-1.2px] text-gray-900;
+    @apply mt-4 text-6xl leading-[72px] font-bold tracking-[-1.2px] text-gray-100;
   }
 
   .section-text {
-    @apply text-secondary text-[32px] font-semibold;
+    @apply text-gray-100 text-[32px] font-semibold;
   }
 
   .small-text {
@@ -37,7 +38,7 @@
   }
 
   .hero-carousel {
-    @apply relative sm:px-10 py-5 sm:pt-20 pb-5 max-w-[560px] h-[700px] w-full bg-[#F2F4F7] rounded-[30px] sm:mx-auto;
+    @apply relative sm:px-10 py-5 sm:pt-20 pb-5 max-w-[560px] h-[700px] w-full bg-[#312f5bc6] rounded-[30px] sm:mx-auto;
   }
 
   .carousel {
@@ -53,7 +54,7 @@
   }
 
   .carousel .control-dots .dot.selected {
-    @apply bg-[#475467] !important;
+    @apply bg-[#364255] !important;
   }
 
   .trending-section {
@@ -116,7 +117,7 @@
   }
 
   .nav-logo {
-    @apply font-spaceGrotesk text-[21px] text-secondary font-bold;
+    @apply font-spaceGrotesk text-[21px] text-gray-400 font-bold;
   }
 
   /* PRICE INFO */
@@ -147,6 +148,6 @@
   }
 
   .searchbar-btn {
-    @apply bg-gray-900 border border-gray-900 rounded-lg shadow-xs px-5 py-3 text-white text-base font-semibold hover:opacity-90 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-40;
+    @apply bg-purple-900 border border-gray-900 rounded-lg shadow-xs px-5 py-3 text-white text-base font-semibold hover:opacity-90 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-40;
   }
 }
