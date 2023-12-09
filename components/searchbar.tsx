@@ -1,16 +1,58 @@
 "use client"
+import { FormEvent, useState } from "react"
+
+const isValidAmazonProductURL = (url: string) => {
+  try{
+    const parsedURL = new URL(url);
+    const hostname = parsedURL.hostname;
+
+    //check  if name contains amazon.something
+    if(hostname.includes('amazon.com') || 
+    hostname.includes('amazon.in') || 
+    hostname.endsWith('amazon')
+    ) {
+      return true;
+    }
+
+  }catch(error){
+    return false;
+  }
+  return false;
+}
 
 const searchbar = () => {
-    const handleSubmit = () => {
+  const [searchPrompt, setsearchPrompt] = useState('')
+  const [Loading, setLoading] = useState(false)
 
+    const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+      event.preventDefault();
+
+      const isValidLink = isValidAmazonProductURL(searchPrompt);
+      if(!isValidLink) return alert("Please provide a valid Amazon link")
+      try {
+        setLoading(true)
+
+        //Scrap the product page here
+
+      } catch (error) {
+        console.log(error)
+        
+      } finally {
+        setLoading(false);
+      }
+      
     }
   return (
     <form className='flex flex-wrap gap-4 mt-12' onSubmit={handleSubmit}>
         <input type="text"
+        value={searchPrompt}
+        onChange={(e)=> setsearchPrompt(e.target.value)}
         placeholder="Enter the product link"
         className="searchbar-input"/>
-        <button type="submit" className="searchbar-btn">
-            Search
+        <button type="submit" className="searchbar-btn"
+        disabled={searchPrompt === ''}
+        > 
+            {Loading?'Searching...' : 'search'}
         </button>
 
     </form>
