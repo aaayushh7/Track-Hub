@@ -20,7 +20,7 @@ const Home = () => {
               Unleash the power of
               <span className='text-primary'> TrackHub</span>
             </h1>
-            <p className='mt-6'>
+            <p className='mt-6 text-gray-100'>
               Powerful, self-serve product and growth analytics to help you convert, engage, and retain more.
             </p>
             <Searchbar/>
@@ -31,7 +31,7 @@ const Home = () => {
       </section>
       <section className='trending-section'>
         <h2 className='section-text'>Trending</h2>
-        <div className='flex flex-wrap gap-x-8 gap-y-16'>
+        <div className='flex flex-wrap gap-x-8 gap-y-16 text-gray-400'>
           {['Apple Iphone 15','Book','Sneaker'].map((product) => (
             <div>{product}</div>
           ))}
