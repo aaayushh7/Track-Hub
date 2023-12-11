@@ -139,7 +139,7 @@
   }
 
   .product-title {
-    @apply text-secondary text-xl leading-6 font-semibold truncate;
+    @apply text-gray-200 text-xl leading-6 font-semibold truncate;
   }
 
   /* SEARCHBAR INPUT */
