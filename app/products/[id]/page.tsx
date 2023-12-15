@@ -1,13 +1,16 @@
 import { getProductById } from "@/lib/actions"
+import { formatNumber } from "@/lib/utils";
+import { Product } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
 import { redirect } from "next/navigation";
+import { format } from "path";
 
 type Props = {
   params: {id: string }
 }
 const ProductDetails = async ({ params: {id} }: Props) => {
-  const product = await getProductById(id);
+  const product: Product = await getProductById(id);
   if(!product) redirect('/');
 
   return (
@@ -43,9 +46,39 @@ const ProductDetails = async ({ params: {id} }: Props) => {
                   width={20}
                   height={20}
                   />
+                  <p className="text-base font-semibold text-[#D46F77]">
+                    {product.reviewsCount}
+                  </p>
+              </div>
+              <div className="p-2 bg-slate-400 rounded-10">
+                <Image 
+                src="/assets/icons/bookmark.svg"
+                alt="bookmark"
+                width={20}
+                height={20}
+                />
+              </div>
+
+              <div className="p-2 bg-slate-400 rounded-10">
+                <Image 
+                src="/assets/icons/share.svg"
+                alt="bookmark"
+                width={20}
+                height={20}
+                />
               </div>
             </div>
+          </div>
 
+          <div  className="product-info">
+            <div className="flex flex-col gap-2">
+              <p className="text-[34px] text-gray-100 font-bold">
+                {product.currency} {formatNumber(product.currentPrice)}
+              </p>
+              <p className="text-[21px] text-gray-200 opacity-50 line-through">
+                {product.currency} {formatNumber(product.originalPrice)}
+              </p>
+            </div>
           </div>
         </div>
       </div>
