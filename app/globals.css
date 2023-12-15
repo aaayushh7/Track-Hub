@@ -71,11 +71,11 @@
   }
 
   .product-info {
-    @apply flex items-center flex-wrap gap-10 py-6 border-y border-y-[#E4E4E4];
+    @apply flex items-center flex-wrap gap-10 py-6 border-y border-y-[#8e8b8b];
   }
 
   .product-hearts {
-    @apply flex items-center gap-2 px-3 py-2 bg-[#a09d9dac] rounded-10;
+    @apply flex items-center gap-2 px-3 py-2 bg-[#fd7a7a6f] rounded-10;
   }
 
   .product-stars {
