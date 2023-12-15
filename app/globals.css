@@ -67,7 +67,7 @@
   }
 
   .product-image {
-    @apply flex-grow xl:max-w-[50%] max-w-full py-16 border border-[#CDDBFF] rounded-[17px];
+    @apply flex-grow xl:max-w-[50%] max-w-full py-16 border border-[#cbc1d6] rounded-[17px];
   }
 
   .product-info {
@@ -75,7 +75,7 @@
   }
 
   .product-hearts {
-    @apply flex items-center gap-2 px-3 py-2 bg-[#FFF0F0] rounded-10;
+    @apply flex items-center gap-2 px-3 py-2 bg-[#a09d9dac] rounded-10;
   }
 
   .product-stars {
