@@ -28,6 +28,7 @@ export async function scrapeAmazonProduct(url: string) {
        const title = $('#productTitle').text().trim();
        const currentPrice = extractPrice(
         $('.priceToPay span.a-price-whole'),
+        $('.apexPriceToPay span.a-price-whole'),
         $('a.size.base.a-color-price'),
         $('.a-button-selected .a-color-base'),
         $('.a-price-whole'),
@@ -35,8 +36,10 @@ export async function scrapeAmazonProduct(url: string) {
        const originalPrice = extractPrice(
         $('#priceblock_ourprice'),
         $('.a-price.a-text-price span.a-offscreen'),
+        $('.a-price.a-text-price.a-size-base span.a-offscreen'),
         $('#listPrice'),
         $('#priceblock_dealprice'),
+        $('.a-offscreen'),
         $('.a-size-base.a-color-price')
        )
        const outOfStock = $('$availability span').text().trim().toLowerCase() === 'currently unavailable';
