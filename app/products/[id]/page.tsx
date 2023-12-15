@@ -1,5 +1,6 @@
 import PriceInfoCard from "@/components/PriceInfoCard";
-import { getProductById } from "@/lib/actions"
+import ProductCard from "@/components/ProductCard";
+import { getProductById, getSimilarProducts } from "@/lib/actions"
 import { formatNumber } from "@/lib/utils";
 import { Product } from "@/types";
 import Image from "next/image";
@@ -13,6 +14,8 @@ type Props = {
 const ProductDetails = async ({ params: {id} }: Props) => {
   const product: Product = await getProductById(id);
   if(!product) redirect('/');
+
+  const similarProducts = await getSimilarProducts(id);
 
   return (
     <div className="product-container">
@@ -126,7 +129,7 @@ const ProductDetails = async ({ params: {id} }: Props) => {
               <PriceInfoCard
                 title="Highest Price"
                 iconSrc="/assets/icons/arrow-up.svg"
-                value={`${product.currency} ${formatNumber(product.highestPrice)}`}
+                value={`${product.currency} ${formatNumber(product.originalPrice)}`}
               />
               <PriceInfoCard
                 title="Lowest Price"
@@ -158,6 +161,18 @@ const ProductDetails = async ({ params: {id} }: Props) => {
           </Link>
         </button>
       </div>
+
+      {similarProducts && similarProducts?.length > 0 &&(
+        <div className="py-14 flex flex-col gap-2 w-full">
+          <p className="section-text">Similar Products</p>
+
+          <div className="flex flex-wrap gap-10 mt-7 w-full">
+            {similarProducts.map((product) => (
+              <ProductCard key={product._id} product={product} />
+            ))}
+          </div>
+        </div>
+      ) }
     </div>
   )
 }
