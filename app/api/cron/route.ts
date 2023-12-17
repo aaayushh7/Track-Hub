@@ -17,7 +17,7 @@ const updatedProducts = await Promise.all(
 products.map(async (currentProduct) => {
 // Scrape product
 const scrapedProduct = await scrapeAmazonProduct(currentProduct.url);
-if (!scrapedProduct) return;
+if (!scrapedProduct || !scrapedProduct.currentPrice) return;
 const updatedPriceHistory = [
           ...currentProduct.priceHistory,
 {
