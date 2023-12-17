@@ -13,7 +13,7 @@
   body {
     @apply font-inter;
     background-color: black;
-  }
+  }  
 }
 
 @layer utilities {
