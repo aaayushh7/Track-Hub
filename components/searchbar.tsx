@@ -29,7 +29,7 @@ const searchbar = () => {
       event.preventDefault();
 
       const isValidLink = isValidAmazonProductURL(searchPrompt);
-      if(!isValidLink) return alert("Please provide a valid Amazon link")
+      if(!isValidLink) return alert("Please provide a valid Amazon full link.\n Shortened(i.e. amzn.eu) links doesn't work currently.")
       try {
         setLoading(true)
 

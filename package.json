@@ -12,6 +12,7 @@
     "@headlessui/react": "^1.7.17",
     "axios": "^1.6.2",
     "cheerio": "^1.0.0-rc.12",
+    "follow-redirects": "^1.15.3",
     "mongoose": "^8.0.3",
     "next": "14.0.4",
     "nodemailer": "^6.9.7",
@@ -21,6 +22,7 @@
     "supports-color": "^8.1.1"
   },
   "devDependencies": {
+    "@types/follow-redirects": "^1.14.4",
     "@types/node": "^20",
     "@types/nodemailer": "^6.4.14",
     "@types/react": "^18",
