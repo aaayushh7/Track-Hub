@@ -25,7 +25,7 @@ const Home = async () => {
               <span className='text-primary'> TrackHub</span>
             </h1>
             <p className='mt-6 text-gray-100'>
-              Track your favourite producy just by a single click, Search → scroll to your product → Track → Register and done! Get notified when it reaches it's lowest price or comes back in stock!
+              Track your favourite product just by a single click, Search → scroll to your product → Track → Register and done! Get notified when it reaches it's lowest price or comes back in stock!
             </p>
             <Searchbar/>
           </div>
