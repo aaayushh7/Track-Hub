@@ -41,6 +41,7 @@ const Home = async () => {
             <ProductCard key={product._id} product={product}/>
           ))}
         </div>
+        </section>
 
 
 <footer className="bg-white rounded-lg shadow mt-4 dark:bg-gray-800">
@@ -62,7 +63,7 @@ const Home = async () => {
     </div>
 </footer>
 
-      </section>
+     
     </>
   )
 }
