@@ -12,7 +12,7 @@
 @layer base {
   body {
     @apply font-inter;
-    background-color: white;
+    background-color: black;
   }  
 }
 
